@@ -11,6 +11,7 @@ const {MongoClient, ObjectID} = require('mongodb');
 // console.log(name);
 
 // don't need to have existing db before using it, but won't create it until docs added
+// MongoClient.connect cbfx returns access to db
 MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {  // ES7 arrow cb fx will fire after connection success or fail, err may or may not exist, use db obj to read/write data
   if (err) {
     return console.log('Unable to connect to MongoDB server');
